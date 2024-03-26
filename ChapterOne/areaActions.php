@@ -203,14 +203,14 @@ function quitGame() : void {
 function shootElf() : void {
     echo "Vous frappez le petit être de toutes vos forces. Vous pouvez sentir la douleur de cet adorable créature, vous pardonnera-t-elle ?\n".
         RED. "C'était vraiment très méchant de votre part. Il serait temps de relativiser vos comportements. Pour vous permettre de réfléchir à vos actes,".
-        " maintenez la touche Entrée pour 30 secondes. Et qu'on ne vous y reprenne plus\n\n". COLOR_RESET;
-
+        " appuyez sur la touche Entrée et attendez 30 secondes. Et qu'on ne vous y reprenne plus\n\n". COLOR_RESET;
+    readline();
         $userPunishment = 0;
         while ($userPunishment <= 30) {
             sleep(1);
-            readline();
             $userPunishment++;
-            echo "ENTER: " . $userPunishment;
+            echo "PENITENCE: " . $userPunishment . PHP_EOL;
         }
+    echo CLEAR_CONSOLE;
     mainArea();
 }
